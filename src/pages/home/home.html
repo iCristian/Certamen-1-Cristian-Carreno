@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <!--{{ 'HOME.TITLE' | translate }}-->
+      {{ 'HOME.TITLE' | translate:{value: 'Page'} }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div translate [translateParams]="{value: 'EPIC'}">HOME.GREETING</div>
+
+<button ion-button full (click)="setLanguage('de')">{{ 'HOME.LNGBTN' | translate:{value: 'German'} }}</button>
+<button ion-button full (click)="setLanguage('en')">{{ 'HOME.LNGBTN' | translate:{value: 'English'} }}</button>
+
+<div [innerHTML]="'HOME.INTRO' | translate"></div>
+
+{{ 'HOME.NOTEXISTING' | translate }}
+<br>
+{{ currentLanguage }}
+</ion-content>
